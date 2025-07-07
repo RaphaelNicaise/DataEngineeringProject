@@ -1,0 +1,8 @@
+
+*.pyc
+*.pyo
+
+logs
+plugins
+
+.env
