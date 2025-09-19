@@ -13,7 +13,8 @@ services:
     command: server /data --console-address ":9001"
     volumes:
       - ./minio_data:/data   # carpeta local vinculada a MinIO
-      
+  
+  # Base de datos Postgres para Airflow
   postgres:
     image: postgres:15
     container_name: airflow_postgres
