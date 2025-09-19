@@ -6,3 +6,13 @@ logs
 plugins
 
 .env
+
+**/*.meta
+**/tmp
+**/*.bin
+**/.minio.sys
+
+# Airflow
+airflow/logs/*
+airflow/airflow.db
+airflow/airflow.cfg
