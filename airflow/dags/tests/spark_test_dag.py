@@ -1,16 +1,24 @@
 from datetime import datetime
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-
 from spark_session import SparkSessionSingleton
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
 def test_spark_session():
+    logger.info("Starting Spark session test...")
     spark = SparkSessionSingleton.get_instance()
+    logger.info("Spark session created successfully.")
     data = [("Hello, world!",)]
     columns = ["test"]
     df = spark.createDataFrame(data, columns)
     df.show()
-    print("Spark session is working correctly.")
+    logger.info("Spark session is working correctly.")
 
 
 with DAG(
