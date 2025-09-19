@@ -20,4 +20,5 @@ airflow users create \
 echo "Iniciando webserver y scheduler..."
 airflow webserver &
 sleep 5
+echo "El webserver de Airflow está iniciado en http://localhost:8085"
 airflow scheduler
