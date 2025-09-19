@@ -29,7 +29,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   airflow:
-    image: apache/airflow:2.7.1
+    build: ./airflow  
     container_name: airflow
     depends_on:
       - postgres
